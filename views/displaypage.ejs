@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+<div class="container">
+	<div class = "row">
+		<div class="col-md-9" style="margin:auto;">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= posts.image %>" style="width:1000px; height:auto;">
+				<div class="container">
+				<div class="caption-full" style="margin-left:auto;">
+					<h4 style="font-size:30px; width:70%;"><a><%= posts.name %></a></h4>
+					<h4 class="pull-right" style="margin-top:-20px;">Created on: <%= posts.date %></h4>
+					<p style="font-size:17px;">
+						<em>Submitted By <%= posts.author.username %></em>
+					</p>
+					<%if(currentUser && posts.author.id.equals(currentUser._id)){%>
+					<a class="btn btn-primary" href="/main/<%= posts.type%>/<%= posts.filtertype%>/<%= posts._id%>/edit">Edit</a>
+					<form id="delete-form" action="/main/<%= posts.type%>/<%= posts.filtertype%>/<%= posts._id%>?_method=DELETE" method="POST" style="display:inline;">
+						<button class="btn btn-danger">
+							Delete
+						</button>
+					</form>
+					<%}%>
+					<p style="font-size:15px; margin-top:20px;"><%= posts.description %></p>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+
+<%- include("partials/footer") %>

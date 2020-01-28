@@ -1,0 +1,22 @@
+<%- include("../partials/headernew") %>
+    <div class="container">
+	<div class="row" style="text-align:center;">
+		<div style="width:40%; margin:100px auto; background:#FFFFFF; border-radius:20px;">
+    <h1>Login Page!</h1>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">Username: </label>
+                <input type="text" name="username" placeholder="Username" id="username">
+            </div>
+            <div class="form-group">
+                <label for="Password">Password: </label>
+                <input type="password" name="password" placeholder="Password" id="password">
+            </div>
+            <div class="form-group">
+                <button>Login</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+<%- include("../partials/footer") %>

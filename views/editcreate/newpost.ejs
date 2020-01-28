@@ -1,0 +1,50 @@
+<%- include("../partials/headernew") %>
+
+<div class="container">
+	<div class="row" style="align:center;">
+		<div style="width:50%; margin:25px auto; background:#FFFFFF; border-radius:20px;">
+		<h1>
+			Create a New Post!
+		</h1>
+			<form action="/main/posts" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="name" placeholder="Title" id="input">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="image" placeholder="Image url" id="input">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control" type="text" name="description" placeholder="Description" id="inputdesc"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="type">Post Type : </label>
+					<select name="type" id="type">
+                        <option value="blog">Blog</option>
+                        <option value="news">News</option>
+                        </select>
+				</div>
+				<div class="form-group">
+					<label for="filtertype">Post Type : </label>
+					<select name="filtertype" id="filtertype">
+                        <option value="india">India</option>
+                        <option value="technology">Technology</option>
+                        <option value="international">International</option>
+                        </select>
+				</div>
+                <div class="form-group">
+					<label for="start">Creation Date : </label>
+					<input type="date" id="start" name="date"
+                                min="201-01-01" max="2040-12-31">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-lg btn-primary btn-block">
+						Submit!
+					</button>
+				</div>
+				<a href="/main" id="goback">Go Back</a>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>

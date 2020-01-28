@@ -1,0 +1,28 @@
+<%- include("../partials/headernew") %>
+
+<div class="container">
+	<div class="row">
+		<div style="width:50%; margin: 25px auto;background:#FFFFFF; border-radius:20px;">
+		<h1>Edit your post!</h1>
+			<form action="/main/<%=posts.type%>/<%=posts.filtertype%>/<%=posts._id%>?_method=PUT" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="posts[name]" value="<%=posts.name%>" id="input">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="posts[image]" value="<%=posts.image%>" id="input">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control" type="text" name="posts[description]" id="inputdesc"><%=posts.description%></textarea>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-lg btn-primary btn-block">
+						Save!
+					</button>
+				</div>
+				<a href="/main" id="goback">Go Back</a>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
